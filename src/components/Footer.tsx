@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h3
-              className="text-3xl font-bold text-primary mb-2"
+              className="text-3xl font-bold text-white mb-2"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
-              URBANO EN FRECUENCIA
+              URBANO <span className="text-urban-yellow">EN FRECUENCIA</span>
             </h3>
             <p className="text-muted-foreground">
               La revolución urbana de Medellín
@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://instagram.com/urbanoenfrecuencia"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-white hover:text-urban-orange transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="h-6 w-6" />
@@ -31,7 +31,7 @@ const Footer = () => {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-white hover:text-urban-orange transition-colors"
               aria-label="YouTube"
             >
               <Youtube className="h-6 w-6" />
@@ -40,7 +40,7 @@ const Footer = () => {
               href="https://open.spotify.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-white hover:text-urban-orange transition-colors"
               aria-label="Spotify"
             >
               <Music className="h-6 w-6" />

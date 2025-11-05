@@ -49,9 +49,9 @@ export default {
         },
         urban: {
           dark: "hsl(var(--urban-dark))",
-          green: "hsl(var(--urban-green))",
           orange: "hsl(var(--urban-orange))",
-          beige: "hsl(var(--urban-beige))",
+          yellow: "hsl(var(--urban-yellow))",
+          red: "hsl(var(--urban-red))",
         },
       },
       borderRadius: {
