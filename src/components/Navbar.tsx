@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +18,28 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+    // Si no estamos en la página principal, navegar primero
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Esperar un poco para que la página se cargue antes de hacer scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const navigateToEntrevistas = () => {
+    navigate('/entrevistas');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -61,22 +81,22 @@ const Navbar = () => {
               Podcast
             </button>
             <button
-              onClick={() => scrollToSection("nosotros")}
-              className="px-6 py-2 bg-urban-orange text-urban-dark font-bold rounded-full hover:bg-urban-orange/90 transition-colors uppercase text-sm"
-            >
-              Story Map
-            </button>
-            <button
-              onClick={() => scrollToSection("nosotros")}
+              onClick={() => scrollToSection("gamificacion")}
               className="px-6 py-2 bg-urban-orange text-urban-dark font-bold rounded-full hover:bg-urban-orange/90 transition-colors uppercase text-sm"
             >
               Gamificación
             </button>
             <button
-              onClick={() => scrollToSection("nosotros")}
-              className="px-6 py-2 bg-urban-orange text-urban-dark font-bold rounded-full hover:bg-urban-orange/90 transition-colors uppercase text-sm whitespace-nowrap"
+              onClick={() => scrollToSection("storymap")}
+              className="px-6 py-2 bg-urban-orange text-urban-dark font-bold rounded-full hover:bg-urban-orange/90 transition-colors uppercase text-sm"
             >
-              Realidad Aumentada
+              Story Map
+            </button>
+            <button
+              onClick={navigateToEntrevistas}
+              className="px-6 py-2 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-colors uppercase text-sm"
+            >
+              Entrevistas
             </button>
           </div>
 
@@ -113,10 +133,16 @@ const Navbar = () => {
               Podcast
             </button>
             <button
-              onClick={() => scrollToSection("nosotros")}
+              onClick={() => scrollToSection("storymap")}
               className="block w-full px-6 py-2 bg-urban-orange text-urban-dark font-bold rounded-full uppercase text-sm"
             >
               Story Map
+            </button>
+            <button
+              onClick={navigateToEntrevistas}
+              className="block w-full px-6 py-2 bg-primary text-white font-bold rounded-full uppercase text-sm mt-2"
+            >
+              Entrevistas
             </button>
           </div>
         )}
