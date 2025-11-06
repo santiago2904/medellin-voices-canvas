@@ -56,7 +56,6 @@ const Navbar = () => {
               variant="ghost"
               className="text-urban-orange hover:text-urban-orange/80"
             >
-              <span className="text-2xl" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>🏠</span>
             </Button>
           </div>
 

@@ -1,5 +1,9 @@
-import logoSoundwave from "@/assets/logo-soundwave.png";
 import { Instagram, Facebook, Twitter } from "lucide-react";
+
+// Función para convertir URL de Google Drive a enlace directo
+const getGoogleDriveImageUrl = (fileId: string) => {
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+};
 
 const Hero = () => {
   return (
@@ -42,7 +46,7 @@ const Hero = () => {
           {/* Right Side - Logo */}
           <div className="animate-fade-in flex flex-col items-center justify-center">
             <img 
-              src={logoSoundwave} 
+              src={getGoogleDriveImageUrl("17Eonz38MncuniXoWR5X0rQ7GMJV86yfX")} 
               alt="Urbano en Frecuencia Logo" 
               className="w-full max-w-md mb-6"
             />
