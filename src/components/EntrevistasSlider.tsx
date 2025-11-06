@@ -5,43 +5,39 @@ import { Card } from "@/components/ui/card";
 
 // Videos de entrevistas - configurable con IDs de YouTube
 // Para obtener el ID de YouTube: en la URL de YouTube (ej: https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-// el ID es la parte después de "v=" (en este ejemplo: dQw4w9WgXcQ)
+
+
+
 const entrevistas = [
   {
     id: 1,
-    title: "Entrevista - Episodio 1",
+    title: "Construyendo Imperios Musicales",
     youtubeId: "4UWEUEOKFHs",
-    description: "Primera entrevista del proyecto Urbano en Frecuencia",
   },
   {
     id: 2,
-    title: "Entrevista - Episodio 2",
-    youtubeId: "/DozSaqcg-qM", // Reemplazar con el ID real de YouTube
-    description: "Segunda entrevista del proyecto",
+    title: "Secretos de Beats-Trap",
+    youtubeId: "DozSaqcg-qM",
   },
   {
     id: 3,
-    title: "Entrevista - Episodio 3",
-    youtubeId: "dQw4w9WgXcQ", // Reemplazar con el ID real de YouTube
-    description: "Tercera entrevista del proyecto",
+    title: "Drill del Valle al Mundo",
+    youtubeId: "NwyXWbifGIs",
   },
   {
     id: 4,
-    title: "Entrevista - Episodio 4",
-    youtubeId: "dQw4w9WgXcQ", // Reemplazar con el ID real de YouTube
-    description: "Cuarta entrevista del proyecto",
+    title: "Vida de Hellcat Urbana",
+    youtubeId: "Yjl2z0qS6m4",
   },
   {
     id: 5,
-    title: "Entrevista - Episodio 5",
-    youtubeId: "dQw4w9WgXcQ", // Reemplazar con el ID real de YouTube
-    description: "Quinta entrevista del proyecto",
+    title: "De las Calles a Hits en Ocean",
+    youtubeId: "yafTK_wRctI",
   },
   {
     id: 6,
-    title: "Entrevista - Episodio 6",
-    youtubeId: "dQw4w9WgXcQ", // Reemplazar con el ID real de YouTube
-    description: "Sexta entrevista del proyecto",
+    title: "Venezuela, Donde el Sueño Nunca se Apagó",
+    youtubeId: "53Kk-455g70",
   },
 ];
 
@@ -87,18 +83,16 @@ const EntrevistasSlider = () => {
             <div className="p-4 bg-urban-dark border-t border-urban-orange">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
-                    {entrevistas[currentIndex].title}
-                  </h3>
-                  <p className="text-muted-foreground mt-1">
+                  <p className="text-xl text-white font-bold" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                     {currentIndex + 1} de {entrevistas.length}
                   </p>
-                  {entrevistas[currentIndex].description && (
-                    <p className="text-gray-400 text-sm mt-1">
-                      {entrevistas[currentIndex].description}
-                    </p>
-                  )}
                 </div>
+                <div className="flex-1 flex justify-center">
+                  <h3 className="text-xl text-white font-normal" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+                    {entrevistas[currentIndex].title}
+                  </h3>
+                </div>
+                <div className="w-20"></div>
               </div>
             </div>
           </Card>
