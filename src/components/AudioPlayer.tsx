@@ -328,10 +328,6 @@ const AudioPlayer = ({ isOpen, onClose, podcast }: AudioPlayerProps) => {
               <span>{formatTime(currentTime)}</span>
               <span>{formatTime(duration)}</span>
             </div>
-            {/* Debug info */}
-            <div className="text-xs text-muted-foreground text-center">
-              Debug: {currentTime.toFixed(1)}s / {duration.toFixed(1)}s | Progress: {progress.toFixed(1)}%
-            </div>
           </div>
 
           {/* Controls */}
